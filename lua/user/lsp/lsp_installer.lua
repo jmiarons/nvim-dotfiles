@@ -39,15 +39,24 @@ local lsp_flags = {
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'pyright', 'jdtls', 'sumneko_lua', 'bashls' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+for _, server in ipairs(servers) do
+  -- lspconfig[server].setup {
+  --   on_attach = on_attach,
+  --   capabilities = capabilities,
+  -- }
+  local opts = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	}
+	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
+	if has_custom_opts then
+		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
+	end
+	lspconfig[server].setup(opts)
 end
