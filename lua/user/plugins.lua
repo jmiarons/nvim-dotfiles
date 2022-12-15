@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
   use "nvim-lualine/lualine.nvim"
   use "tpope/vim-surround"
+  use "MunifTanjim/nui.nvim"
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin colorscheme
@@ -86,6 +87,9 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim" -- git status signals
+
+  -- ChatGPT
+  use "jackMort/ChatGPT.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
