@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "nvim-lualine/lualine.nvim"
+  use "tpope/vim-surround"
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin colorscheme
@@ -70,7 +71,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-
+  use 'mfussenegger/nvim-jdtls' -- java plugin
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
