@@ -1,5 +1,5 @@
 local DEFAULT_SETTINGS = {
-    -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
+    -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
     -- This setting has no relation with the `automatic_installation` setting.
     ensure_installed = {'clangd', 'pyright', 'jdtls', 'lua_ls', 'bashls', 'html', 'dockerls', 'tsserver', 'cssmodules_ls'},
 
