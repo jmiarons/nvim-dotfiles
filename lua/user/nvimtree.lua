@@ -14,7 +14,6 @@ require("nvim-tree").setup {
   reload_on_bufenter = false,
   respect_buf_cwd = false,
   on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
-  remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs)
   view = {
     adaptive_size = false,
     centralize_selection = false,
@@ -26,13 +25,6 @@ require("nvim-tree").setup {
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    -- @deprecated
-    mappings = {
-      custom_only = false,
-      list = {
-        -- user mappings go here
-      },
-    },
     float = {
       enable = false,
       open_win_config = {
