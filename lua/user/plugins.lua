@@ -53,6 +53,7 @@ return packer.startup(function(use)
 
   -- colorscheme
   use { "catppuccin/nvim", as = "catppuccin" } -- Catppuccin colorscheme
+  use { "Mofiqul/dracula.nvim", as = "dracula" }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

@@ -3,6 +3,7 @@ require('lualine').setup {
     -- theme = bubbles_theme,
     component_separators = '|',
     section_separators = { left = '', right = '' },
+    theme = 'dracula-nvim'
   },
   sections = {
     lualine_a = {
