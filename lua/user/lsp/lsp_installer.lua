@@ -41,8 +41,6 @@ local lsp_flags = {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local lspconfig = require('lspconfig')
-
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'clangd', 'pyright', 'jdtls', 'ts_ls', 'lua_ls', 'bashls' }
 for _, server in ipairs(servers) do
@@ -56,7 +54,5 @@ for _, server in ipairs(servers) do
 	end
 	
 	-- Use the new vim.lsp.config API (Nvim 0.11+)
-	if lspconfig[server] then
-		lspconfig[server].setup(opts)
-	end
+	vim.lsp.config(server, opts)
 end

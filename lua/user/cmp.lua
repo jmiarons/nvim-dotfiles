@@ -1,3 +1,14 @@
+-- Add luarocks package path for jsregexp and other luarocks modules
+local luarocks_path = os.getenv("HOME") .. "/.luarocks/share/lua/5.5/?.lua"
+if not string.find(package.path, luarocks_path, 1, true) then
+  package.path = luarocks_path .. ";" .. package.path
+end
+
+local luarocks_cpath = os.getenv("HOME") .. "/.luarocks/lib/lua/5.5/?.so"
+if not string.find(package.cpath, luarocks_cpath, 1, true) then
+  package.cpath = luarocks_cpath .. ";" .. package.cpath
+end
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
   return
